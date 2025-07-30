@@ -10,7 +10,7 @@ import Mobilemenu from "./Mobilemenu";
 import Desktopmenu from "./Desktopmenu";
 
 export default function Menu() {
-  const [open, setopen] = useState(false);
+  const [open, setopen] = useState<boolean>(false);
 
   return (
     <div>
