@@ -31,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-200`}
       >
         <Navbar />
+
         <Maxwidthwrapper>
           {children}
           <Footer />

@@ -1,5 +1,5 @@
 import React from 'react'
-import Menu from './Menu'
+import Menu from './Navlinks/Menu'
 import Maxwidthwrapper from './Maxwidthwrapper'
 
 export default function Navbar() {
