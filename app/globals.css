@@ -5,6 +5,14 @@
 @import "swiper/css/pagination";
 
 
+
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  
+}
+
+
 *{
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
