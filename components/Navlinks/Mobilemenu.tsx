@@ -5,7 +5,7 @@ import React from "react";
 export default function Mobilemenu() {
   return (
     <div className=" lg:hidden flex ">
-      <nav className="flex flex-col justify-center z-10 items-center bg-slate-200  w-full p-4 rounded-md">
+      <nav className="flex flex-col justify-center z-25 items-center bg-slate-200  w-full p-4 rounded-md">
         <div className="flex items-center gap-4">
           {/* NAVLINKS */}
 

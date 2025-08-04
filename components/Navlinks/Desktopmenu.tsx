@@ -10,34 +10,34 @@ export default function Desktopmenu() {
          <nav className="flex justify-between items-center gap-6 ">
         <div className="flex items-center gap-4">
           <Link href="/">
-            <p className="font-bold ubuntu-bold text-2xl md:text-4xl">
+            <p className="font-bold text-red-500 ubuntu-bold text-2xl md:text-4xl">
               Code<span className="text-blue-500 ubuntu-bold">Rider</span>
             </p>
           </Link>
 
           {/* NAVLINKS */}
 
-          <div className=" gap-6 hidden lg:flex">
+          <div className=" gap-6 hidden lg:flex items-center bg-white rounded-md py-1 px-5">
             <Link
-              className="hover:text-blue-500 p-2  border-b border-transparent hover:border-blue-500 transition-transform duration-300"
+              className="hover:bg-black hover:text-white p-2  rounded-md  border-b border-transparent  transition-all duration-150"
               href="/"
             >
               Home
             </Link>
             <Link
-              className="hover:text-blue-500 p-2 border-b border-transparent hover:border-blue-500 transition-transform duration-300"
+              className="hover:bg-black hover:text-white p-2   rounded-md border-b border-transparent  transition-all duration-300"
               href="/shop"
             >
               Shop
             </Link>
             <Link
-              className="hover:text-blue-500 p-2 border-b border-transparent hover:border-blue-500 transition-transform duration-300"
+              className="hover:bg-black hover:text-white p-2 rounded-md border-b border-transparent  transition-all duration-150"
               href="/contact"
             >
               Contact
             </Link>
             <Link
-              className="hover:text-blue-500 p-2  border-b border-transparent hover:border-blue-500 transition-transform duration-500"
+              className="hover:bg-black hover:text-white rounded-md p-2  border-b border-transparent transition-all duration-150"
               href="/faq"
             >
               FAQ
@@ -52,7 +52,7 @@ export default function Desktopmenu() {
             <input
               type="text"
               placeholder="Search item in one click "
-              className="px-2 py-1 rounded-md border border-gray-500 placeholder:text-gray-500"
+              className="px-2 py-1 rounded-md border border-white placeholder:text-white"
             />
             <button className="hover:cursor-pointer bg-gray-300 rounded-md shadow-md p-1">
               <SearchIcon className="text-gray-400" />

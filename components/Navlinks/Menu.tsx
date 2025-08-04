@@ -25,8 +25,8 @@ export default function Menu() {
 
         {/* MOBILE-NAVLINKS */}
 
-        <div onClick={() => setopen(!open)} className="flex lg:hidden">
-          {open ? <CircleX /> : <AlignRight />}
+        <div onClick={() => setopen(!open)} className="flex lg:hidden z-10">
+          {open ? <CircleX className="text-white" /> : <AlignRight className="text-white" />}
         </div>
 
     
