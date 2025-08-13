@@ -1,3 +1,5 @@
+"use client"
+
 import { superbike } from "@/app/data/bike";
 import React from "react";
 import { motion } from "framer-motion";
@@ -17,9 +19,10 @@ export default function Feat() {
         {superbike.map((bike: Bike) => (
           <motion.div
             key={bike.id}
-            animate={{ opacity: 0, y: 10 }}
-            initial={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 , delay: 0.1 }}
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale:1 }}
+            transition={{ duration: 0.5 , ease:"easeOut"}}
+            viewport={{once: true}}
             className="bg-gray-800 p-4 rounded-md "
           >
             <SuperBikeCard bike={bike} />

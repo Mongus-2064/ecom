@@ -67,9 +67,10 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <motion.div
             key={index}
-            animate= {{opacity:1 , y:0}}
-            initial={{ opacity: 0, y: 30 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            animate= {{opacity:0 , y:10 , scale: 0.95}}
+            whileInView={{ opacity: 1, y: 0 , scale: 1}}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{once: true}}
           >
             <div className="bg-white/90 p-3 rounded-md">
               <h2 className="font-semibold text-lg">{faq.question}</h2>

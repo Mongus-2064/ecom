@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { SearchIcon, UserCircle2, UserPlus } from "lucide-react";
 import Link from "next/link";

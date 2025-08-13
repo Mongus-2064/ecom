@@ -1,8 +1,18 @@
+"use client"
+
+
 import React from "react";
+import {motion} from "framer-motion"
 
 export default function Contact() {
   return (
+    <motion.div
+      animate= {{opacity:1 , y:0}}
+      initial= {{opacity:0 , y:30}}
+      transition={{duration: 0.5 , delay: 0.1}}
+      >
     <div className="flex justify-center">
+      
 <div className="w-full max-w-2xl bg-white p-8 rounded-xl shadow-lg z-99">
         <h2 className="text-2xl font-bold mb-6 text-gray-800">Get in Touch</h2>
 
@@ -54,8 +64,9 @@ export default function Contact() {
           </button>
         </form>
       </div>
-    
     </div>
+    </motion.div>
+
       
   );
 }
