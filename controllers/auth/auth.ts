@@ -1,6 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
 import { User } from "@/Models/User";
-import bcrypt from "bcrypt"
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken"
+
 // Login service
 
 export async function POST(req: NextRequest) {
@@ -13,14 +15,17 @@ export async function POST(req: NextRequest) {
         { status: 400 }
       );
     }
-
-    const newUser = new User({ name: body.name, password: body.password });
+    const hashedpassword = await bcrypt.hash(body.password, 10);
+    const newUser = new User({ name: body.name, password: hashedpassword });
     await newUser.save();
     return NextResponse.json({
       msg: "User created Successfully",
       user: newUser,
     });
   } catch (error) {
-    return NextResponse.json({ error: "Internal Server error",error }, { status: 500 });
+    return NextResponse.json(
+      { Error: "Internal Server error", error },
+      { status: 500 }
+    );
   }
 }
