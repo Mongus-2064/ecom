@@ -1,0 +1,26 @@
+import { NextResponse, NextRequest } from "next/server";
+import { User } from "@/Models/User";
+import bcrypt from "bcrypt"
+// Login service
+
+export async function POST(req: NextRequest) {
+  try {
+    const body = await req.json();
+
+    if (!body.name || !body.password) {
+      return NextResponse.json(
+        { error: "Name and password are mandatory!" },
+        { status: 400 }
+      );
+    }
+
+    const newUser = new User({ name: body.name, password: body.password });
+    await newUser.save();
+    return NextResponse.json({
+      msg: "User created Successfully",
+      user: newUser,
+    });
+  } catch (error) {
+    return NextResponse.json({ error: "Internal Server error",error }, { status: 500 });
+  }
+}
