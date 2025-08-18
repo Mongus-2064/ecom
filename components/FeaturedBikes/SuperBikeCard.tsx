@@ -9,27 +9,33 @@ interface Props {
 
 export default function SuperBikeCard({ bike }: Props) {
   return (
-    <div className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-      <div className="relative w-full h-60 overflow-hidden">
-        <Image
-          className=" h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
-          src={bike.image}
-          width={400}
-          height={240}
-          alt="superbike"
-        />
-      </div>
-
-      <div className="p-4 space-y-1">
-        <h2 className="text-lg font-semibold text-gray-800">{bike.name}</h2>
-        <p className="text-sm text-gray-600">{bike.engine}</p>
-        <p className="text-sm text-gray-500 line-clamp-2">{bike.description}</p>
-        <p className="text-md font-medium text-blue-600">Rs. {bike.price}</p>
-
-        <Link href={`/bikes/${bike.id}`} className="mt-2 w-full flex justify-center bg-black text-white py-2 rounded-md hover:bg-gray-800 transition-colors duration-200">
-          View Details
-        </Link>
-      </div>
+   <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+  <div className="relative p-2.5 h-96 overflow-hidden rounded-xl bg-clip-border">
+    <Image
+      src={bike.image}
+      alt="card-image"
+      className="h-full w-full object-cover rounded-md"
+      width={600}
+      height={0}
+    />
+  </div>
+  <div className="p-4 flex flex-col">
+    <div className="mb-2 flex items-center justify-between">
+      <p className="text-slate-800 text-xl font-semibold">
+        {bike.name}
+      </p>
+      <p className="text-cyan-600 text-xl font-semibold">
+        {bike.price}
+      </p>
     </div>
+    <p className="text-slate-600 leading-normal font-light">
+     {bike.description}
+    </p>
+    <Link href="/cart" className="rounded-md w-full mt-6 bg-cyan-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-cyan-700 focus:shadow-none active:bg-cyan-700 hover:bg-cyan-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
+      Add to Cart
+    </Link>
+  </div>
+</div>
+   
   );
 }

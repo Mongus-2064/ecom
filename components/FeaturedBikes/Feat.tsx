@@ -10,12 +10,12 @@ export default function Feat() {
   return (
     <>
       <div>
-        <p className="text-center ubuntu-bold text-5xl text-white mt-12">
+        <p className="text-center ubuntu-bold text-5xl text-white mt-12 mb-12">
           Featured Bikes
         </p>
       </div>
 
-      <div className="grid  md:grid-cols-2 2xl:grid-cols-3 gap-4 place-items-center mt-7 ">
+      <div className="grid  md:grid-cols-2 xl:grid-cols-3 flex gap-50 w-full place-items-center mt-7 ">
         {superbike.map((bike: Bike) => (
           <motion.div
             key={bike.id}
@@ -23,7 +23,7 @@ export default function Feat() {
             whileInView={{ opacity: 1, y: 0, scale:1 }}
             transition={{ duration: 0.5 , ease:"easeOut"}}
             viewport={{once: true}}
-            className="bg-gray-800 p-4 rounded-md "
+            className=" p-4 rounded-md "
           >
             <SuperBikeCard bike={bike} />
           </motion.div>
