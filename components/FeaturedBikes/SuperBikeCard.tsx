@@ -9,33 +9,34 @@ interface Props {
 
 export default function SuperBikeCard({ bike }: Props) {
   return (
-   <div className="relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
-  <div className="relative p-2.5 h-96 overflow-hidden rounded-xl bg-clip-border">
-    <Image
-      src={bike.image}
-      alt="card-image"
-      className="h-full w-full object-cover rounded-md"
-      width={600}
-      height={0}
-    />
-  </div>
-  <div className="p-4 flex flex-col">
-    <div className="mb-2 flex items-center justify-between">
-      <p className="text-slate-800 text-xl font-semibold">
-        {bike.name}
-      </p>
-      <p className="text-cyan-600 text-xl font-semibold">
-        {bike.price}
-      </p>
+    <div className="relative h-full  flex flex-col bg-gray-900 shadow-lg border border-gray-800 rounded-xl w-86 overflow-hidden transition-transform transform hover:scale-105">
+      {/* Bike Image */}
+      <div className="relative h-96 overflow-hidden rounded-t-xl">
+        <Image
+          src={bike.image}
+          alt="bike-image"
+          className="h-full w-full object-cover rounded-t-xl transition-transform duration-500 hover:scale-110"
+          width={600}
+          height={0}
+        />
+      </div>
+
+      {/* Card Content */}
+      <div className="p-5 flex flex-col bg-gray-900">
+        <div className="mb-3 flex items-center justify-between">
+          <p className="text-white text-xl font-bold">{bike.name}</p>
+          <p className="text-cyan-400 text-xl font-semibold">{bike.price}</p>
+        </div>
+        <p className="text-gray-300 text-sm leading-relaxed">{bike.description}</p>
+
+        {/* Add to Cart Button */}
+        <Link
+          href="/cart"
+          className="mt-6 w-full text-center py-3 px-5 rounded-lg bg-cyan-600 text-white font-medium shadow-lg hover:bg-cyan-500 hover:shadow-xl transition-all"
+        >
+          Add to Cart
+        </Link>
+      </div>
     </div>
-    <p className="text-slate-600 leading-normal font-light">
-     {bike.description}
-    </p>
-    <Link href="/cart" className="rounded-md w-full mt-6 bg-cyan-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-cyan-700 focus:shadow-none active:bg-cyan-700 hover:bg-cyan-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-      Add to Cart
-    </Link>
-  </div>
-</div>
-   
   );
 }

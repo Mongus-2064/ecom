@@ -15,15 +15,15 @@ export default function Feat() {
         </p>
       </div>
 
-      <div className="grid  md:grid-cols-2 xl:grid-cols-3  gap-50 w-full place-items-center mt-7 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full justify-items-center">
         {superbike.map((bike: Bike) => (
           <motion.div
             key={bike.id}
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
-            whileInView={{ opacity: 1, y: 0, scale:1 }}
-            transition={{ duration: 0.5 , ease:"easeOut"}}
-            viewport={{once: true}}
-            className=" p-4 rounded-md "
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="p-4 rounded-md h-full"
           >
             <SuperBikeCard bike={bike} />
           </motion.div>
