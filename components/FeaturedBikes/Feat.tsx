@@ -15,7 +15,7 @@ export default function Feat() {
         </p>
       </div>
 
-      <div className="grid  md:grid-cols-2 xl:grid-cols-3 flex gap-50 w-full place-items-center mt-7 ">
+      <div className="grid  md:grid-cols-2 xl:grid-cols-3  gap-50 w-full place-items-center mt-7 ">
         {superbike.map((bike: Bike) => (
           <motion.div
             key={bike.id}

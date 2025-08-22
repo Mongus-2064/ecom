@@ -52,10 +52,10 @@ export default function Desktopmenu() {
             <input
               type="text"
               placeholder="Search item in one click "
-              className="px-2 py-1 rounded-md border border-white placeholder:text-white"
+              className="px-2 py-1 rounded-md border text-white border-white placeholder:text-white"
             />
-            <button className="hover:cursor-pointer bg-gray-300 rounded-md shadow-md p-1">
-              <SearchIcon className="text-gray-400" />
+            <button className="hover:cursor-pointer bg-white rounded-md shadow-md p-1">
+              <SearchIcon className="text-black" />
             </button>
           </div>
           <div className=" gap-4 hidden lg:flex">
